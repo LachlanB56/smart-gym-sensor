@@ -84,7 +84,9 @@ A serial receiver reads the live stream, parses each sample, logs every reading 
 
 - Clean, drift-free per-rep **ROM** measurement validated against recorded movement (≈80–95° on full-range curls, with measured rep-to-rep variation).
 - Reliable **rep detection** and **tempo** extraction from raw IMU data via peak detection on a derived angle signal.
+<img width="1155" height="392" alt="image" src="https://github.com/user-attachments/assets/180cd6e7-7e27-4a5d-83fe-22ee53726434" />
 - **Segmentation model** distinguishing curls from background noise at ~85% accuracy on held-out windows — a working basis for automatic workout isolation.
+- 
 
 ---
 
