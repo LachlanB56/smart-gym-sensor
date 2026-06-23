@@ -59,7 +59,7 @@ A serial receiver reads the live stream, parses each sample, logs every reading 
 | Layer | Tools |
 |---|---|
 | Hardware | STM32 Nucleo-F411RE, InvenSense MPU-6050 (6-axis IMU) |
-| Firmware | C, Arduino framework, PlatformIO, I²C |
+| Firmware | C, python, Arduino framework, PlatformIO, I²C |
 | Processing | Python, NumPy, pandas, SciPy |
 | Machine learning | scikit-learn (Random Forest classification) |
 | Tooling | Jupyter, Matplotlib |
