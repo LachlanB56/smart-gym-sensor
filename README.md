@@ -2,7 +2,7 @@
 
 An end-to-end wearable system that uses inertial sensors to automatically detect gym repetitions and analyse exercise form. Raw motion data is captured from a body-worn IMU, streamed to a host machine, processed into per-rep biomechanical metrics (range of motion, tempo), and classified using machine learning.
 
-Built solo from the firmware up: embedded C on an STM32 microcontroller, a custom serial data-acquisition pipeline, signal-processing in Python, and two scikit-learn models — one for form quality, one for distinguishing exercise from background noise.
+Built solo from the firmware up: embedded C on an STM32 microcontroller, a custom serial data-acquisition pipeline, signal-processing in Python, and two scikit-learn models, one for form quality, one for distinguishing exercise from background noise.
 
 > **Status:** Working research prototype. Validated on bicep curls; the pipeline generalises to other single-joint movements.
 
@@ -10,7 +10,7 @@ Built solo from the firmware up: embedded C on an STM32 microcontroller, a custo
 
 ## Why this project
 
-Wearable form-analysis products (smart compression garments, EMG sleeves) have historically struggled not on the sensing side but on turning noisy real-world motion into reliable, meaningful feedback. This project tackles that core problem on a single representative exercise — taking raw accelerometer/gyroscope data and producing trustworthy rep counts and movement metrics — as the foundation for a larger smart-apparel concept.
+Wearable form-analysis products (smart compression garments, EMG sleeves) have historically struggled not on the sensing side but on turning noisy real-world motion into reliable, meaningful feedback. This project tackles that core problem on a single representative exercise taking raw accelerometer/gyroscope data and producing trustworthy rep counts and movement metrics as the foundation for a larger smart-apparel concept.
 
 ---
 
@@ -94,10 +94,10 @@ A serial receiver reads the live stream, parses each sample, logs every reading 
 
 ## What I Learned
 
-This project spans three normally-separate disciplines — embedded systems, digital signal processing, and machine learning — and the most valuable lessons were at their seams:
+This project spans three normally-separate disciplines — embedded systems, digital signal processing, and machine learning and where I learned most was being able to create a usable pipeline from the raw sensor output to the model.
 
 - **The sensors are the easy part; the data is the hard part.** Reliable feature extraction and a clean, well-labelled dataset matter far more than model choice.
-- **Compute what you can; learn what you can't.** Rep count, ROM, and tempo are deterministic (peak detection, geometry) — ML is reserved for genuine judgments like form quality and noise rejection, with the deterministic metrics feeding the models as features.
+- **Compute what you can; learn what you can't.** Rep count, ROM, and tempo are deterministic (peak detection, geometry) ML is reserved for judgments like form quality and noise rejection, with the deterministic metrics feeding the models as features.
 - **Validate visually at every step.** Plotting intermediate signals (and overlaying detected peaks) was the single most effective debugging tool across the whole pipeline.
 
 ---
